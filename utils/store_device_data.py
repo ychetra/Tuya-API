@@ -1,4 +1,10 @@
-from test_device import TuyaClient
+import sys
+import os
+
+# Add the root directory to Python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from tuya.test import TuyaClient
 from database.db_utils import get_db_connection
 import json
 import time
