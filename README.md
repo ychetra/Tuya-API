@@ -1,6 +1,6 @@
 # Tuya Device Status Monitor
 
-This project monitors Tuya smart devices and stores their switch status changes in a SQL Server database.
+A Python application that monitors Tuya smart devices and stores their switch status changes in a SQL Server database.
 
 ## Project Structure
 
@@ -22,8 +22,8 @@ project_root/
 │
 ├── tuya/                 # Tuya API related files
 │   ├── __init__.py
-│   ├── test.py          # Tuya API client
-│   └── test_device.py   # Device-specific functions
+│   ├── tuya_client.py          # Tuya API client
+│   └── tuya_device.py         # Device-specific functions
 │
 └── .env                 # Configuration file
 ```
@@ -37,8 +37,7 @@ project_root/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/ychetra/Tuya-API
 ```
 
 2. Install required packages:
