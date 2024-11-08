@@ -1,6 +1,7 @@
 # Environment files
 .env
 devices.env
+*.env
 
 # Database files
 *.db
