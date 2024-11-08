@@ -1,4 +1,4 @@
-from tuya.test import TuyaClient
+from tuya.tuya_client import TuyaClient
 import json
 
 def main():

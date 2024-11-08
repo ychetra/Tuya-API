@@ -1,6 +1,14 @@
-from database.db_utils import get_db_connection
+import sys
+import os
 from datetime import datetime
 import time
+
+# Add the root directory to Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.dirname(current_dir)
+sys.path.append(root_dir)
+
+from database.db_utils import get_db_connection
 
 def get_switch_status(hours=24, device_id=None):
     try:

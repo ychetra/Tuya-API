@@ -1,20 +1,29 @@
 import sys
 import os
+from dotenv import load_dotenv
 
 # Add the root directory to Python path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.dirname(current_dir)
+sys.path.append(root_dir)
 
-from tuya.test import TuyaClient
+# Load both .env files
+load_dotenv()  # Load main .env
+load_dotenv('devices.env')  # Load devices.env
+
+from tuya.tuya_client import TuyaClient  # Updated to use tuya directory
 from database.db_utils import get_db_connection
 import json
 import time
 
-# List of device IDs to monitor
+# Get all environment variables that start with DEVICE_ID_
 DEVICE_IDS = [
-    "bfd049f7e821abbfd15sv9",  # Device 1
-    # "",    # Device 2
-   
+    value for key, value in os.environ.items() 
+    if key.startswith('DEVICE_ID_') and value
 ]
+
+print(f"Loaded {len(DEVICE_IDS)} devices from devices.env")
+print("Device IDs:", DEVICE_IDS)  # Debug print to see loaded devices
 
 def get_current_status(client, device_id):
     """Get current device status and return switch states"""
