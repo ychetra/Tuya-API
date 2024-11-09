@@ -26,6 +26,7 @@ project_root/
 │   └── tuya_device.py         # Device-specific functions
 │
 └── .env                 # Configuration file
+└── devices.env          # Devices configuration file
 ```
 
 ## Prerequisites
